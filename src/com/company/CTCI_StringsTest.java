@@ -3,9 +3,6 @@ package com.company;
 import org.junit.Assert.*;
 import static org.junit.Assert.*;
 
-/**
- * Created by divide00 on 9/13/2016.
- */
 public class CTCI_StringsTest {
 
     @org.junit.Test
@@ -17,11 +14,20 @@ public class CTCI_StringsTest {
 
     @org.junit.Test
     public void testUniqueCharStringNoDS() throws Exception {
-
+        assertTrue(CTCI_Strings.uniqueCharStringNoDS("sample"));
+        assertFalse(CTCI_Strings.uniqueCharStringNoDS("test"));
+        assertTrue(CTCI_Strings.uniqueCharStringNoDS("palindrome"));
     }
 
     @org.junit.Test
     public void testStringPermutation() throws Exception {
+        assertTrue(CTCI_Strings.stringPermutation("test", "estt"));
+        assertFalse(CTCI_Strings.stringPermutation("test", "best"));
+    }
 
+    @org.junit.Test
+    public void testStringCompression() throws Exception {
+        assertEquals(CTCI_Strings.stringCompression("aaabbbccc"), "a3b3c3");
+        assertEquals(CTCI_Strings.stringCompression("aaabbbcccaaa"), "a3b3c3a3");
     }
 }
