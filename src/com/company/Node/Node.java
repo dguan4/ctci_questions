@@ -4,14 +4,14 @@ package com.company.Node;
  * From CTCI simple linked list implementation
  */
 public class Node {
-    Node next = null;
-    int data;
+    public Node next = null;
+    public int data;
 
     public Node(int d){
         data = d;
     }
 
-    void appendToTail(int d){
+    public void appendToTail(int d){
         Node end = new Node(d);
         Node n = this;
         while (n.next != null){
@@ -20,7 +20,7 @@ public class Node {
         n.next = end;
     }
 
-    Node deleteNode (Node head, int d){
+    public Node deleteNode (Node head, int d){
         Node n = head;
 
         if (n.data == d){
@@ -35,5 +35,17 @@ public class Node {
             n = n.next;
         }
         return head;
+    }
+
+    public String printNodes () {
+        String retString = "";
+        Node n = this;
+
+        while (n != null){
+            retString += n.data;
+            n = n.next;
+        }
+
+        return retString;
     }
 }
