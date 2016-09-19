@@ -52,4 +52,41 @@ public class CTCI_LLTest {
         CTCI_LL.deleteNode(temp);
         assertTrue(head.printNodes().equals("1245"));
     }
+
+    @org.junit.Test
+    public void testAddLinkedList() throws Exception {
+        Node first = new Node(1);
+        first.appendToTail(2);
+        first.appendToTail(3);
+        Node second = new Node(2);
+        second.appendToTail(9);
+        second.appendToTail(9);
+        assertTrue(CTCI_LL.addLinkedList(first, second) == 1313);
+    }
+
+    @org.junit.Test
+    public void testAddLinkedList2() throws Exception {
+        Node first = new Node(1);
+        first.appendToTail(2);
+        first.appendToTail(3);
+        Node second = new Node(2);
+        second.appendToTail(9);
+        second.appendToTail(9);
+        assertTrue(CTCI_LL.addLinkedList2(first, second, 0).printNodes().equals("3131")); //reverse order
+    }
+
+    @org.junit.Test
+    public void testCircularLL() throws Exception {
+        Node first = new Node(1);
+        Node second = new Node(2);
+        Node third = new Node(3);
+        Node fourth = new Node(4);
+        Node fifth = new Node(5);
+        first.next = second;
+        second.next = third;
+        third.next = fourth;
+        fourth.next = fifth;
+        fifth.next = first;
+        assertTrue(CTCI_LL.circularLL(first).data == 1);
+    }
 }
